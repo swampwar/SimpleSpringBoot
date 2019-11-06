@@ -1,0 +1,65 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.yang.wind</groupId>
+  <packaging>jar</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <name>SimpleSpringBoot</name>
+  
+  <parent>
+  	<groupId>org.springframework.boot</groupId>
+  	<artifactId>spring-boot-starter-parent</artifactId>
+  	<version>2.2.0.RELEASE</version>
+  </parent>
+  
+  <properties>
+  	<mybatis-spring-boot-starter.version>2.1.1</mybatis-spring-boot-starter.version>
+  </properties>
+  
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    
+    <!-- SpringBoot 사용 -->
+	<dependency>
+    	<groupId>org.springframework.boot</groupId>
+    	<artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    
+    <!-- thymeleaf 사용 -->
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-thymeleaf</artifactId>
+	</dependency>
+	
+	<!-- MariaDB 사용 -->
+    <dependency>
+        <groupId>org.mariadb.jdbc</groupId>
+        <artifactId>mariadb-java-client</artifactId>
+    </dependency>
+    
+    <!-- Mybatis 사용 --> <!-- https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter -->
+	<dependency>
+	    <groupId>org.mybatis.spring.boot</groupId>
+	    <artifactId>mybatis-spring-boot-starter</artifactId>
+	    <version>${mybatis-spring-boot-starter.version}</version>
+	</dependency>
+	    
+  </dependencies>
+  
+  <build>
+    <finalName>SimpleSpringBoot</finalName>
+    <plugins>
+    	<plugin>
+    		<groupId>org.springframework.boot</groupId>
+    		<artifactId>spring-boot-maven-plugin</artifactId>
+    	</plugin>
+    </plugins>
+  </build>
+
+  <artifactId>SimpleSpringBoot</artifactId>
+</project>
