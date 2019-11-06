@@ -27,6 +27,3 @@ hs_err_pid*
 /.project
 /target/
 /.settings
-
-# intelliJ 제외파일
-/.idea
