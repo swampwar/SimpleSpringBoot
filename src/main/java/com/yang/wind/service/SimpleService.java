@@ -12,9 +12,29 @@ import com.yang.wind.mapper.SimpleMapper;
 public class SimpleService {
 	
 	@Autowired
-	SimpleMapper sMapper;
+	SimpleMapper simpleMapper;
 	
 	public List<Simple> selectAll(){
-		return sMapper.selectAll();
+		return simpleMapper.selectAll();
+	}
+
+	public Simple selectByName(String name){
+		return simpleMapper.selectByKey(name);
+	}
+
+	public Simple selectByCols(String col1, int col2, String col3){
+	    return simpleMapper.selectByCols(col1, col2, col3);
+    }
+
+    public void updateOne(Simple object){
+		simpleMapper.updateOne(object);
+	}
+
+	public void insertOne(Simple object){
+		simpleMapper.insertOne(object);
+	}
+
+	public void deleteOne(String name){
+		simpleMapper.deleteOne(name);
 	}
 }

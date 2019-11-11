@@ -1,8 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
+<!-- namespace : Mapper I/F와 동일하도록 설정 -->
 <mapper namespace="com.yang.wind.mapper.SimpleMapper">
-	<select id="selectAll" resultType="Simple">
-		select name, age from TB_SIMPLE
+	<select id="selectAll" resultType="Simple"> <!-- resultType : 설정파일에서 mybatis.type-aliases-package 속성을 지정하여 간편하게 작성 -->
+		select name, age, gender from TB_SIMPLE
 	</select>
+
+	<select id="selectByKey" resultType="Simple">
+		select name, age, gender from tb_simple
+		where name = #{key}
+	</select>
+
+	<select id="selectByCols" resultType="Simple">
+		select name, age, gender
+		from tb_simple
+		where 1=1
+	    and gender = #{gender}
+		and age = #{age}
+	  	and name = #{name}
+	</select>
+
+	<insert id="insertOne">
+		insert into tb_simple values (#{name}, #{age}, #{gender})
+	</insert>
+
+	<update id="updateOne">
+		update tb_simple set AGE = #{age}, gender = #{gender} where NAME = #{name}
+	</update>
+
+	<delete id="deleteOne">
+		delete from tb_simple where NAME = #{name}
+	</delete>
 </mapper>

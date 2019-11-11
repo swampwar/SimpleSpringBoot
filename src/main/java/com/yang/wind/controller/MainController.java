@@ -15,7 +15,7 @@ public class MainController {
 	
 	@Autowired
 	SimpleService sService;
-	
+
 	@RequestMapping("/")
 	public String main() {
 		return "main";
@@ -27,4 +27,11 @@ public class MainController {
 		List<Simple> lists = sService.selectAll();
 		return lists.toString();
 	}
+
+//	@RequestMapping("/db2")
+//	@ResponseBody
+//	public String selectByKey() {
+//		Simple rslt = sService.selectByName("Yangs");
+//		return rslt.toString();
+//	}
 }
